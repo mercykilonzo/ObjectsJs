@@ -94,23 +94,25 @@ playlist.listSongs();
 
 // 5. create a constractor with title,lessons, completedLessons
 //    b. create a function markcompleted and add a new completed lesson
-//    c. create a function get progress and subtract completedLessons from lessons
+//    c. create a function get progress
 function Course(title, lessons, completedLessons){
     this.title = title;
     this.lessons = lessons;
     this.completedLessons =completedLessons;
     this.markComplete = function (lesson){
-        this.completedLessons.push(lesson);
+     this.completedLessons.push(lesson);
+     return completedLessons
 
     },
     this.getProgress = function(){
-       let diff = (this.lessons.length) - (this.completedLessons.length)
-       return `${diff} out of ${lessons.length} lessons completed`
+       return `${this.completedLessons.length} out of ${lessons.length} lessons completed`
     }
 };
 
 const course = new Course('software engineering', ['Python', 'Javascript', 'QA', 'Kotlin', 'Research','Design'],['Python', 'Javascript', 'QA'])
 console.log(course.getProgress());
+console.log(course.markComplete('NYJ'));
+
 
 
 
